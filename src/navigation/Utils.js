@@ -1,5 +1,6 @@
-import { Platform } from 'react-native';
-import { Navigation } from 'react-native-navigation';
+/* eslint-disable prettier/prettier */
+import {Platform} from 'react-native';
+import {Navigation} from 'react-native-navigation';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
@@ -38,8 +39,8 @@ export const defaultTopBar = {
   },
 };
 
-const startMainContent=()=> {
-  console.log("start");
+const startMainContent = () => {
+  console.log('start');
   Navigation.setRoot({
     root: {
       stack: {
@@ -58,6 +59,48 @@ const startMainContent=()=> {
       },
     },
   });
-}
-const NavigationUtils={startMainContent}
+};
+const startIntro = () => {
+  console.log('start');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'IntroView',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+const startLogin = () => {
+  console.log('form Login');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Login',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+const NavigationUtils = {startMainContent, startIntro, startLogin};
 export default NavigationUtils;

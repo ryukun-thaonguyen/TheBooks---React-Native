@@ -1,29 +1,34 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import { Navigation } from 'react-native-navigation';
-import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
+import {Navigation} from 'react-native-navigation';
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import {store, persistor} from '../redux/store';
 import Home from '../screens/Home';
-import { store,persistor } from '../redux/store';
+import IntroView from '../screens/Intro';
+import Login from '../screens/Authentication/login';
 const SCREENS_WITH_REDUX = {
-  Home
+  Home,
+  IntroView,
+  Login,
 };
 const SCREENS = {};
 
-function ReduxProvider(Component,store,persistor) {
-  return props => (
+function ReduxProvider(Component, store, persistor) {
+  return (props) => (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-         <Component {...props} />
+        <Component {...props} />
       </PersistGate>
     </Provider>
   );
 }
-function registerScreens(store,persistor) {
+function registerScreens(store, persistor) {
   Object.keys(SCREENS_WITH_REDUX).map((screenName) => {
     Navigation.registerComponent(
       screenName,
-      ()=>ReduxProvider(SCREENS_WITH_REDUX[screenName],store,persistor),
+      () => ReduxProvider(SCREENS_WITH_REDUX[screenName], store, persistor),
       () => gestureHandlerRootHOC(SCREENS_WITH_REDUX[screenName]),
     );
   });
