@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import Icon from 'react-native-vector-icons/thebook-appicon';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
   ios: 'overFullScreen',
 };
-
 export const defaultBottomTab = {
   textColor: 'grey',
   iconColor: 'grey',
@@ -18,7 +18,7 @@ export const defaultBottomTab = {
     bottom: -5,
     right: 0,
   },
-  fontSize: 10,
+  fontSize: 12,
   drawBehind: true,
   disableIconTint: true, // set true if you want to disable the icon tinting
   disableSelectedIconTint: true,
@@ -40,7 +40,10 @@ export const defaultTopBar = {
 };
 
 const startMainContent = () => {
-  console.log('start');
+  Promise.all([
+    Icon.getImageSource('ic-menu', 20),
+    Icon.getImageSource('ic-search', 20),
+  ]).then(([menu, search]) => {
   Navigation.setRoot({
     root: {
       stack: {
@@ -50,7 +53,17 @@ const startMainContent = () => {
               name: 'Home',
               options: {
                 topBar: {
-                  visible: false,
+                  visible: true,
+                  leftButtons: [
+                    {
+                      icon: menu,
+                    },
+                  ],
+                  rightButtons: [
+                    {
+                      icon: search,
+                    },
+                  ],
                 },
               },
             },
@@ -59,6 +72,43 @@ const startMainContent = () => {
       },
     },
   });
+});
+startBottomContent();
+};
+const startBottomContent = () => {
+  Promise.all([
+    Icon.getImageSource('ic-book', 20),
+    Icon.getImageSource('ic-search', 20),
+  ]).then(([menu, search]) => {
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Home',
+              options: {
+                topBar: {
+                  visible: true,
+                  leftButtons: [
+                    {
+                      icon: menu,
+                    },
+                  ],
+                  rightButtons: [
+                    {
+                      icon: search,
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+});
 };
 const startIntro = () => {
   console.log('start');
