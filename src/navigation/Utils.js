@@ -73,42 +73,6 @@ const startMainContent = () => {
     },
   });
 });
-startBottomContent();
-};
-const startBottomContent = () => {
-  Promise.all([
-    Icon.getImageSource('ic-book', 20),
-    Icon.getImageSource('ic-search', 20),
-  ]).then(([menu, search]) => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'Home',
-              options: {
-                topBar: {
-                  visible: true,
-                  leftButtons: [
-                    {
-                      icon: menu,
-                    },
-                  ],
-                  rightButtons: [
-                    {
-                      icon: search,
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        ],
-      },
-    },
-  });
-});
 };
 const startIntro = () => {
   console.log('start');
