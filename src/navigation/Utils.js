@@ -102,5 +102,26 @@ const startLogin = () => {
     },
   });
 };
-const NavigationUtils = {startMainContent, startIntro, startLogin};
+const startRegister = () => {
+  console.log('form Register');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Register',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+const NavigationUtils = {startMainContent, startIntro, startLogin, startRegister};
 export default NavigationUtils;

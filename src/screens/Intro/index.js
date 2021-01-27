@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {ImagesIntro} from '../../themes/index';
 import Swiper from 'react-native-swiper';
 
@@ -11,7 +11,7 @@ export default function IntroView() {
           imageSource: ImagesIntro.intro1,
           title: 'Tìm sách yêu thích',
           subTitle:
-            'Rất nhiều cuốn sách hay và chương trình thú vị được tích hợp trên hệ thống.',
+            'Rất nhiều cuốn sách hay và chương trình\n thú vị được tích hợp trên hệ thống.',
           startButton: false,
         },
         {
@@ -27,13 +27,13 @@ export default function IntroView() {
           imageSource: ImagesIntro.intro3,
           title: 'Tận hưởng cuốn sách',
           subTitle:
-            'Chọn một nơi yêu thích và tận hưởng cuốn sách mà yêu thích thôi nào.',
+            'Chọn một nơi yêu thích và tận hưởng\n cuốn sách mà yêu thích thôi nào.',
           startButton: true,
         },
       ];
   return (
     <View style={styles.homeIntro}>
-        <Swiper loop = {false} style={styles.slideIntro}>
+        <Swiper loop = {false} dotStyle = {styles.styleDots} activeDotStyle = {styles.styleDots} style={styles.slideIntro}>
             {DATAINTROS.map((item , index) => {
                 return (
                     <View style={styles.itemIntro} key={index}>
@@ -53,12 +53,14 @@ export default function IntroView() {
   );
 }
 
-
 const styles = StyleSheet.create({
     homeIntro: {
         flex: 1,
         marginLeft: 21,
         marginRight: 21,
+    },
+    styleDots: {
+        marginBottom: Dimensions.get('screen').height / 3.9,
     },
     itemIntro: {
         marginTop: 120,
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
         width: 300,
     },
     titleIntro: {
-        marginTop: 29,
+        marginTop: 23,
         fontSize: 16,
         color: '#262626',
     },
