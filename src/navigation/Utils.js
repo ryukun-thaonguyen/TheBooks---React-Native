@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import Icon from 'react-native-vector-icons/thebook-appicon';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
@@ -40,7 +41,10 @@ export const defaultTopBar = {
 };
 
 const startMainContent = () => {
-  console.log('start');
+  Promise.all([
+    Icon.getImageSource('ic-menu', 20),
+    Icon.getImageSource('ic-search', 20),
+  ]).then(([menu, search]) => {
   Navigation.setRoot({
     root: {
       stack: {
@@ -50,7 +54,17 @@ const startMainContent = () => {
               name: 'Home',
               options: {
                 topBar: {
-                  visible: false,
+                  visible: true,
+                  leftButtons: [
+                    {
+                      icon: menu,
+                    },
+                  ],
+                  rightButtons: [
+                    {
+                      icon: search,
+                    },
+                  ],
                 },
               },
             },
@@ -59,6 +73,7 @@ const startMainContent = () => {
       },
     },
   });
+});
 };
 const startIntro = () => {
   console.log('start');
