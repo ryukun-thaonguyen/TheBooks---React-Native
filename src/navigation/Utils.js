@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
-import Icon from 'react-native-vector-icons/thebook-appicon';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
   ios: 'overFullScreen',
 };
+
 export const defaultBottomTab = {
   textColor: 'grey',
   iconColor: 'grey',
@@ -18,7 +18,7 @@ export const defaultBottomTab = {
     bottom: -5,
     right: 0,
   },
-  fontSize: 12,
+  fontSize: 10,
   drawBehind: true,
   disableIconTint: true, // set true if you want to disable the icon tinting
   disableSelectedIconTint: true,
@@ -40,10 +40,7 @@ export const defaultTopBar = {
 };
 
 const startMainContent = () => {
-  Promise.all([
-    Icon.getImageSource('ic-menu', 20),
-    Icon.getImageSource('ic-search', 20),
-  ]).then(([menu, search]) => {
+  console.log('start');
   Navigation.setRoot({
     root: {
       stack: {
@@ -53,17 +50,7 @@ const startMainContent = () => {
               name: 'Home',
               options: {
                 topBar: {
-                  visible: true,
-                  leftButtons: [
-                    {
-                      icon: menu,
-                    },
-                  ],
-                  rightButtons: [
-                    {
-                      icon: search,
-                    },
-                  ],
+                  visible: false,
                 },
               },
             },
@@ -72,7 +59,6 @@ const startMainContent = () => {
       },
     },
   });
-});
 };
 const startIntro = () => {
   console.log('start');
