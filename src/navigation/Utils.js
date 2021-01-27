@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import Icon from 'react-native-vector-icons/thebook-appicon';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
