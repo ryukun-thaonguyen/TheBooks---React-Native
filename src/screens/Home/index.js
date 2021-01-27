@@ -1,11 +1,12 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-
-const Home=()=> {
+/* eslint-disable prettier/prettier */
+import React from 'react';
+import { ScrollView } from 'react-native';
+import ListBookComponent from '../../components/ListBookComponent';
+const Home = ()=> {
     return (
-        <View>
-            <Text>home </Text>
-        </View>
-    )
-}
+        <ScrollView>
+        <ListBookComponent />
+      </ScrollView>
+    );
+};
 export default Home;
