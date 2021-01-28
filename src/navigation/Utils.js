@@ -48,6 +48,7 @@ const startMainContent = () => {
   Navigation.setRoot({
     root: {
       stack: {
+        id:"root",
         children: [
           {
             component: {
@@ -138,5 +139,30 @@ const startRegister = () => {
     },
   });
 };
-const NavigationUtils = {startMainContent, startIntro, startLogin, startRegister};
+
+const startSeeAllBook = (data) => {
+  console.log('form SeeAllBook');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'SeeAllBook',
+              passProps: {
+                data: data,
+              },
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+const NavigationUtils = {startMainContent, startIntro, startLogin, startRegister, startSeeAllBook};
 export default NavigationUtils;

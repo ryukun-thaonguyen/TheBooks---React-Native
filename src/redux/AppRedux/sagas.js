@@ -9,6 +9,7 @@ export function* startupSaga() {
     // const { token } = yield select((state) => state.login);
     // http.setAuthorizationHeader(token);
     NavigationUtils.startMainContent();
+    // NavigationUtils.startSeeAllBook();
     // NavigationUtils.startIntro();
     // NavigationUtils.startRegister();
     // NavigationUtils.startBottomTab();
