@@ -2,50 +2,191 @@
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import Icon from 'react-native-vector-icons/thebook-appicon';
+import { Colors } from '../themes';
 const SIDE_MENU_ID = 'sideMenu';
 const SCREEN_OVERLAY = {
   android: 'overCurrentContext',
   ios: 'overFullScreen',
 };
 
-export const defaultBottomTab = {
-  textColor: 'grey',
-  iconColor: 'grey',
-  selectedIconColor: 'black',
-  selectedTextColor: 'black',
-  iconInsets: {
-    top: 5,
-    left: 0,
-    bottom: -5,
-    right: 0,
-  },
-  fontSize: 10,
-  drawBehind: true,
-  disableIconTint: true, // set true if you want to disable the icon tinting
-  disableSelectedIconTint: true,
-};
+const pushScreen=()=>{
 
-export const defaultTopBar = {
-  visible: true,
-  drawBehind: false,
-  hideOnScroll: false,
-  noBorder: true, // no border for ios
-  elevation: 0, // no border for android
-  title: {
-    alignment: 'center',
-    fontSize: 16,
-  },
-  background: {
-    color: 'white',
-  },
-};
+}
+
+const popScreen=()=>{
+
+}
+
+
+const startRoot=()=>{
+  Promise.all([
+    Icon.getImageSource('ic-menu', 20),
+    Icon.getImageSource('ic-search', 20),
+    Icon.getImageSource('ic-book',20),
+    Icon.getImageSource('ic-order',20),
+    Icon.getImageSource('ic-profile-1',20),
+    Icon.getImageSource('ic-notification-1',20),
+    Icon.getImageSource('ic-library-1',20)
+
+  ])
+  .then(([ic_menu,ic_search,ic_books,ic_orders,ic_profile,ic_notifications,ic_library])=>{
+    console.log("start root");
+    Navigation.setRoot({
+      root:{
+        sideMenu:{
+          left:{
+            component:{
+              name:"SideBar",
+              id:"Sidebar"
+            }
+          },
+          center:{
+            bottomTabs:{
+              id:"TABS",
+              options: {
+                bottomTabs: {
+                  animate: true,
+                },
+              },
+              children:[
+                {
+                  stack:{
+                    id:"Home",
+                    children:[
+                      {
+                        component:{
+                          name:"Home",
+                          options:{
+                            topBar:{
+                              leftButtons: [
+                                {
+                                  id: 'sideBar',
+                                  icon: ic_menu,
+                                }
+                              ],
+                              rightButtons: [
+                                {
+                                  id: 'searchButton',
+                                  icon: ic_search,
+                                }
+                              ]
+                            },
+                            bottomTab: {
+                              icon: ic_books,
+                              selectedIconColor: Colors.primary,
+                              animate:true
+                            },
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  stack:{
+                    id:"Order",
+                    children:[
+                      {
+                        component:{
+                          name:"Order",
+                          options:{
+                            topBar:{
+                             
+                            },
+                            bottomTab: {
+                              icon: ic_orders,
+                              selectedIconColor: Colors.primary,
+                              animate:false
+                            },
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  stack:{
+                    id:"User",
+                    children:[
+                      {
+                        component:{
+                          name:"User",
+                          options:{
+                            topBar:{
+                             
+                            },
+                            bottomTab: {
+                              icon: ic_profile,
+                              selectedIconColor: Colors.primary,
+                              animate:false
+                            },
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  stack:{
+                    id:"Notification",
+                    children:[
+                      {
+                        component:{
+                          name:"Notification",
+                          options:{
+                            topBar:{
+                             
+                            },
+                            bottomTab: {
+                              icon: ic_notifications,
+                              selectedIconColor: Colors.primary,
+                              animate:false
+                            },
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  stack:{
+                    id:"Info",
+                    children:[
+                      {
+                        component:{
+                          name:"Info",
+                          options:{
+                            topBar:{
+                             
+                            },
+                            bottomTab: {
+                              icon: ic_library,
+                              selectedIconColor: Colors.primary,
+                              animate:false
+                            },
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+              ]
+            }
+          }
+        }
+      }
+    })
+  }
+  )
+}
+
 
 const startMainContent = () => {
   Promise.all([
     Icon.getImageSource('ic-menu', 20),
     Icon.getImageSource('ic-search', 20),
   ]).then(([menu, search]) => {
-  Navigation.setRoot({
+   Navigation.setRoot({
     root: {
       stack: {
         children: [
@@ -66,6 +207,10 @@ const startMainContent = () => {
                     },
                   ],
                 },
+                bottomTab: {
+                    icon: menu
+                }
+                
               },
             },
           },
@@ -117,5 +262,5 @@ const startLogin = () => {
     },
   });
 };
-const NavigationUtils = {startMainContent, startIntro, startLogin};
+const NavigationUtils = {startRoot,startMainContent, startIntro, startLogin};
 export default NavigationUtils;

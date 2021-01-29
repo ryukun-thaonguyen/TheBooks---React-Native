@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-const colors = {
+const Colors = {
   //main color
   primary: '#1d9dd8',
 
@@ -21,4 +21,4 @@ const colors = {
   warning: '#ffc104',
 };
 
-export default colors;
+export default Colors;
