@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import _ from 'lodash';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { persistReducer, persistStore } from 'redux-persist';
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import {persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import { createLogger } from 'redux-logger';
+import {createLogger} from 'redux-logger';
 import reduxPersist from '../config/ReduxPersist';
 import rootSaga from './sagas';
 import rootReducer from './reducers';
@@ -15,7 +16,7 @@ const config = {
   includeExamples: __DEV__,
 };
 
-export default onComplete => {
+export default (onComplete) => {
   /* ------------- Redux Configuration ------------- */
 
   const middleware = [];
@@ -41,16 +42,20 @@ export default onComplete => {
     // silence these saga-based messages
     // create the logger
     const logger = createLogger({
-      predicate: (getState, { type }) => USE_LOGGING && !_.includes(SAGA_LOGGING_BLACKLIST, type),
+      predicate: (getState, {type}) =>
+        USE_LOGGING && !_.includes(SAGA_LOGGING_BLACKLIST, type),
     });
     middleware.push(logger);
   }
 
   enhancers.push(applyMiddleware(...middleware));
-  const persistedReducer = persistReducer(reduxPersist, combineReducers(rootReducer));
+  const persistedReducer = persistReducer(
+    reduxPersist,
+    combineReducers(rootReducer),
+  );
   const store = createStore(persistedReducer, compose(...enhancers));
   const persistor = persistStore(store, {}, () => onComplete(store, persistor));
   sagaMiddleware.run(rootSaga);
 
-  return { store, persistor };
+  return {store, persistor};
 };

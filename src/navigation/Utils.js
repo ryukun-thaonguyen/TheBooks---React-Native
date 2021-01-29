@@ -189,6 +189,7 @@ const startMainContent = () => {
    Navigation.setRoot({
     root: {
       stack: {
+        id:"root",
         children: [
           {
             component: {
@@ -262,5 +263,55 @@ const startLogin = () => {
     },
   });
 };
+<<<<<<< HEAD
 const NavigationUtils = {startRoot,startMainContent, startIntro, startLogin};
+=======
+const startRegister = () => {
+  console.log('form Register');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Register',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+
+const startSeeAllBook = (data) => {
+  console.log('form SeeAllBook');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'SeeAllBook',
+              passProps: {
+                data: data,
+              },
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+const NavigationUtils = {startMainContent, startIntro, startLogin, startRegister, startSeeAllBook};
+>>>>>>> abf6e013c7628c5d3aede393cf23fc3ddc32b673
 export default NavigationUtils;

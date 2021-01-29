@@ -16,9 +16,10 @@ const Home = ()=> {
     }
   });
     return (
-        <ScrollView>
+      <ScrollView>
         <ListBookComponent />
        </ScrollView>
     );
 };
+
 export default Home;

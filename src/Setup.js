@@ -1,8 +1,9 @@
-import { Navigation } from 'react-native-navigation';
-import { Alert } from 'react-native';
-import { registerScreens } from './navigation/index';
+/* eslint-disable prettier/prettier */
+import {Navigation} from 'react-native-navigation';
+import {Alert} from 'react-native';
+import {registerScreens} from './navigation/index';
 import configureStore from './redux/store';
-import { startup } from './redux/AppRedux/actions';
+import {startup} from './redux/AppRedux/actions';
 
 export let store = null;
 const App = () => {

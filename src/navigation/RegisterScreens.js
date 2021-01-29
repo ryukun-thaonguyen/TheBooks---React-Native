@@ -8,20 +8,31 @@ import {store, persistor} from '../redux/store';
 import Home from '../screens/Home';
 import IntroView from '../screens/Intro';
 import Login from '../screens/Authentication/login';
+<<<<<<< HEAD
 import Order from '../screens/Order';
 import User from '../screens/User';
 import Notification from '../screens/Notification'
 import SideBar from './SideBar/SideBar';
 import Info from '../screens/Info';
+=======
+import Register from '../screens/Authentication/register';
+import SeeAllBook from '../screens/Home/seeAll';
+
+>>>>>>> abf6e013c7628c5d3aede393cf23fc3ddc32b673
 const SCREENS_WITH_REDUX = {
   Home,
   IntroView,
   Login,
+<<<<<<< HEAD
   Order,
   User,
   Notification,
   Info,
   SideBar
+=======
+  Register,
+  SeeAllBook,
+>>>>>>> abf6e013c7628c5d3aede393cf23fc3ddc32b673
 };
 const SCREENS = {};
 
