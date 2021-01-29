@@ -12,6 +12,8 @@ const bookItem = [
           'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/447px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
       },
       {
         id: 2,
@@ -21,6 +23,8 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
       },
       {
         id: 4,
@@ -30,6 +34,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
     ],
   },
@@ -45,6 +52,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
       {
         id: 6,
@@ -54,6 +64,10 @@ const bookItem = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
+
       },
       {
         id: 7,
@@ -63,6 +77,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
       {
         id: 8,
@@ -72,6 +89,9 @@ const bookItem = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
     ],
   },
@@ -87,6 +107,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
       {
         id: 10,
@@ -96,6 +119,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII., giới thiệu, đào tạo, bồi dưỡng, bố trí, sắp xếp các đồng chí dự kiến sẽ đưa vào Ban Chấp hành Trung ương khóa XIII',
+
       },
       {
         id: 11,
@@ -105,6 +131,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
       {
         id: 12,
@@ -114,6 +143,9 @@ const bookItem = [
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxsM4P98uLbaczuXIytumCWGq3AHYGjSIlA&usqp=CAU',
         author: 'Bích Thủy',
         comment: '1.278',
+        price: '200000',
+        description: 'Hội nghị lần thứ 9 của Ban Chấp hành Trung ương (tháng 12/2018) đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII. Đến Hội nghị lần thứ 12, Ban Chấp hành Trung ương đã thảo luận và ban hành phương hướng công tác nhân sự Đại hội lần thứ XIII. Bám sát phương hướng công tác nhân sự, với sự giới thiệu của các cơ quan, đơn vị, địa phương, Ban Chấp hành Trung ương đã tiến hành công tác quy hoạch Ban Chấp hành Trung ương khóa XIII.',
+
       },
     ],
   },

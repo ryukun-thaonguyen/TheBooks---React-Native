@@ -8,10 +8,13 @@ import {store, persistor} from '../redux/store';
 import Home from '../screens/Home';
 import IntroView from '../screens/Intro';
 import Login from '../screens/Authentication/login';
+import BookDetail from '../screens/Detail/bookDetail';
 const SCREENS_WITH_REDUX = {
   Home,
   IntroView,
   Login,
+  BookDetail,
+
 };
 const SCREENS = {};
 

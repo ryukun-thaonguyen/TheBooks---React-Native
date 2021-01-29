@@ -3,14 +3,15 @@ import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 import BookItemComponent from './BookItemComponent';
 import colors from '../themes/Colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 const ChildFlatList = (props)=> {
-  // const data = props.item;
-  // console.log(data);
   return (
     <View>
         <View style={styles.headerTitle}>
             <Text style={styles.title}>{props.item.title}</Text>
-            <Text style={styles.readMore}>Xem hết</Text>
+            <TouchableOpacity>
+              <Text style={styles.readMore}>Xem hết</Text>
+            </TouchableOpacity>
         </View>
       <FlatList
         horizontal={true}

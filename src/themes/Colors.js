@@ -19,6 +19,9 @@ const colors = {
   success: '#28a645',
   error: '#dc3446',
   warning: '#ffc104',
+
+  //detail color
+  textLightBlue: '#1d9dd8',
 };
 
 export default colors;

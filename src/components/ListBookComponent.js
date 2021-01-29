@@ -1,13 +1,11 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, FlatList, SectionList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import colors from '../themes/Colors';
 import bookItem from './data/bookItem';
 import ChildFlatList from './ChildFlatList';
-
 const ListBookComponent = () => {
     const [bookData, setbookData] = useState(bookItem);
-    // console.log(bookData);
     return (
         <View style={styles.container}>
             <FlatList

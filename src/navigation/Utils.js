@@ -75,6 +75,47 @@ const startMainContent = () => {
   });
 });
 };
+const startBookDetail = (data) => {
+  Promise.all([
+    Icon.getImageSource('ic-back', 25),
+    Icon.getImageSource('ic-like-pre', 25),
+  ]).then(([back, heart])=>{
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'BookDetail',
+              passProps: {
+                data: data,
+              },
+              options: {
+                topBar: {
+                  visible: true,
+                  leftButtons: [
+                    {
+                      id: 'back',
+                      icon: back,
+                    },
+                  ],
+                  rightButtons: [
+                    {
+                      id: 'heart',
+                      icon: heart,
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+});
+}
+
 const startIntro = () => {
   console.log('start');
   Navigation.setRoot({
@@ -117,5 +158,5 @@ const startLogin = () => {
     },
   });
 };
-const NavigationUtils = {startMainContent, startIntro, startLogin};
+const NavigationUtils = {startMainContent, startIntro, startLogin, startBookDetail};
 export default NavigationUtils;
