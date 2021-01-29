@@ -8,21 +8,17 @@ import {NavigationUtils} from '../../navigation';
 export function* startupSaga() {
   try {
     const { token } = yield select((state) => state.login);
-    http.setAuthorizationHeader(token);
-    if (token){
-      NavigationUtils.startMainContent();
-    } else {
-      NavigationUtils.startLogin();
-    }
+    // http.setAuthorizationHeader(token);
+    // if (token){
+    //   NavigationUtils.startMainContent();
+    // } else {
+    //   NavigationUtils.startLogin();
+    // }
+    NavigationUtils.startRoot()
     // const { token } = yield select((state) => state.login);
     // http.setAuthorizationHeader(token);
     // NavigationUtils.startMainContent();
-<<<<<<< HEAD
-    NavigationUtils.startRoot();
-    // NavigationUtils.startBottomTab();
-=======
     // NavigationUtils.startSeeAllBook();
->>>>>>> abf6e013c7628c5d3aede393cf23fc3ddc32b673
     // NavigationUtils.startIntro();
     //NavigationUtils.startRegister();
     // NavigationUtils.startBottomTab();

@@ -15,22 +15,11 @@ export default function SeeAllBook(props) {
   return (
     <ScrollView>
       <View style={styles.containViewAll}>
-        <TouchableOpacity onPress={()=>undo()}>
-          <Icon name="ic-back" size={25}/>
-        </TouchableOpacity>
         <Text style={styles.titleBookType}> Đọc nhiều </Text>
-        <View style={styles.viewItem}>
-          {bookDataType.map((item, index) => {
-            return (
-              <BookItemComponent item = {item} index={index}/>
-            );
-          })}
-        </View>
       </View>
     </ScrollView>
   );
 }
-
 const styles = StyleSheet.create({
   containViewAll: {
     marginLeft: 12,

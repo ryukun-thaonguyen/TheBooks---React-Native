@@ -7,14 +7,12 @@ import {NavigationUtils} from '../navigation/index';
 const ChildFlatList = (props)=> {
   // const data = props.item;
   // console.log(data);
-  const viewAllBookType = (data) =>{
-    NavigationUtils.startSeeAllBook(data);
-  };
+
   return (
     <View>
         <View style={styles.headerTitle}>
             <Text style={styles.title}>{props.item.title}</Text>
-            <TouchableOpacity onPress= {()=> viewAllBookType(props.item.data)}>
+            <TouchableOpacity onPress= {()=> NavigationUtils.pushScreen('HomeTab','SeeAllBook') }>
               <Text style={styles.readMore}>Xem hết</Text>
             </TouchableOpacity>
         </View>

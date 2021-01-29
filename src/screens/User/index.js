@@ -2,11 +2,11 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import ListBookComponent from '../../components/ListBookComponent';
-const Order = ()=> {
+const User = ()=> {
     return (
         <ScrollView>
         <ListBookComponent />
        </ScrollView>
     );
 };
-export default Order;
+export default User;
