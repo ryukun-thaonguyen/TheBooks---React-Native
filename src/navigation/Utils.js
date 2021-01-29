@@ -48,6 +48,7 @@ const startMainContent = () => {
   Navigation.setRoot({
     root: {
       stack: {
+        id:"root",
         children: [
           {
             component: {
@@ -158,5 +159,62 @@ const startLogin = () => {
     },
   });
 };
-const NavigationUtils = {startMainContent, startIntro, startLogin, startBookDetail};
+const startRegister = () => {
+  console.log('form Register');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Register',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+};
+
+const startSeeAllBook = (data) => {
+  Promise.all([
+    Icon.getImageSource('ic-back', 25),
+
+  ]).then(([back])=>{
+  console.log('form SeeAllBook');
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'SeeAllBook',
+              passProps: {
+                data: data,
+              },
+              options: {
+                topBar: {
+                  visible: true,
+                  leftButtons: [
+                    {
+                      id: 'back',
+                      icon: back,
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  });
+});
+};
+const NavigationUtils = {startMainContent, startIntro, startLogin, startRegister, startBookDetail, startSeeAllBook};
 export default NavigationUtils;

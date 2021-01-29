@@ -1,15 +1,20 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import BookItemComponent from './BookItemComponent';
 import colors from '../themes/Colors';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {NavigationUtils} from '../navigation/index';
 const ChildFlatList = (props)=> {
+  // const data = props.item;
+  // console.log(data);
+  const viewAllBookType = (data) =>{
+    NavigationUtils.startSeeAllBook(data);
+  };
   return (
     <View>
         <View style={styles.headerTitle}>
             <Text style={styles.title}>{props.item.title}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress= {()=> viewAllBookType(props.item.data)}>
               <Text style={styles.readMore}>Xem hết</Text>
             </TouchableOpacity>
         </View>
@@ -18,7 +23,7 @@ const ChildFlatList = (props)=> {
         showsHorizontalScrollIndicator={false}
         data={props.item.data}
         keyExtractor={(d) => d.id}
-        renderItem={(d) => <BookItemComponent item={d} />}
+        renderItem={(d) => <BookItemComponent item={d} thisStyle = {styles.styleItem} />}
       />
     </View>
   );
@@ -36,6 +41,9 @@ const styles = StyleSheet.create({
 readMore: {
   fontSize: 12,
   color: colors.primary,
+},
+styleItem:{
+  marginLeft: 15,
 },
 });
 export default ChildFlatList;

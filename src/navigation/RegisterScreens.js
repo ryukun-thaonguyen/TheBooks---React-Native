@@ -9,12 +9,16 @@ import Home from '../screens/Home';
 import IntroView from '../screens/Intro';
 import Login from '../screens/Authentication/login';
 import BookDetail from '../screens/Detail/bookDetail';
+import Register from '../screens/Authentication/register';
+import SeeAllBook from '../screens/Home/seeAll';
+
 const SCREENS_WITH_REDUX = {
   Home,
   IntroView,
   Login,
   BookDetail,
-
+  Register,
+  SeeAllBook,
 };
 const SCREENS = {};
 

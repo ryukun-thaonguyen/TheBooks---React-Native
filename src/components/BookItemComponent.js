@@ -1,24 +1,25 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/thebook-appicon';
 import colors from '../themes/Colors';
 import { NavigationUtils } from '../navigation';
 const BookItemComponent = (props) =>{
-    const data = props.item;
+    var data = props.item.item;
+    if (!data){
+        data = props.item;
+    }
     const handleBookDetail = (dataDetail) =>{
         NavigationUtils.startBookDetail(dataDetail);
     };
     return (
-         <View style={styles.viewBookContent}>
-            <TouchableOpacity onPress={()=> handleBookDetail(data.item)}>
-                <View elevation={4} style={styles.borderImage}>
-                    <Image elevation={4} source={{uri: data.item.image}} style={styles.image} />
-                </View>
-                <Text style={styles.txtName}>{data.item.name}</Text>
+         <View style={[styles.viewBookContent, props.thisStyle && props.thisStyle]}>
+            <TouchableOpacity onPress = {()=>handleBookDetail(data)}>
+                <Image source={{uri: data.image}} style={styles.image} />
+                <Text style={styles.txtName}>{data.name}</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-                <Text style={styles.txtAuthor}>{data.item.author}</Text>
+                <Text style={styles.txtAuthor}>{data.author}</Text>
             </TouchableOpacity>
             <View style={styles.viewComment} >
                 <View style={styles.viewStar} >
@@ -28,16 +29,15 @@ const BookItemComponent = (props) =>{
                     <Icon name="star" size={9} color={colors.warning} />
                     <Icon name="star" size={9} color={colors.warning} />
                 </View>
-                <Text style={styles.txtComment}>{data.item.comment}đánh giá</Text>
+                <Text style={styles.txtComment}>{data.comment} đánh giá</Text>
             </View>
          </View>
     );
 };
 const styles = StyleSheet.create({
     viewBookContent: {
-        marginLeft: 15,
-        flex: 1,
         marginTop: 7.5,
+        width: Dimensions.get('screen').width / 2 - 30,
     },
     borderImage: {
         borderRadius: 1,
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
     },
     image: {
-        height: 163.5,
-        width: 112.5,
+        height: 170,
+        width: 155,
     },
     txtName: {
         marginTop: 7.5,
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     viewComment: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        width: 155,
     },
     viewStar: {
         flexDirection: 'row',
