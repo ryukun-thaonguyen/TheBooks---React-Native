@@ -7,12 +7,11 @@ import {NavigationUtils} from '../navigation/index';
 const ChildFlatList = (props)=> {
   // const data = props.item;
   // console.log(data);
-
   return (
     <View>
         <View style={styles.headerTitle}>
             <Text style={styles.title}>{props.item.title}</Text>
-            <TouchableOpacity onPress= {()=> NavigationUtils.pushScreen('HomeTab','SeeAllBook') }>
+            <TouchableOpacity onPress= {()=>NavigationUtils.pushScreen('HomeTab','SeeAllBook')}>
               <Text style={styles.readMore}>Xem hết</Text>
             </TouchableOpacity>
         </View>
@@ -21,7 +20,7 @@ const ChildFlatList = (props)=> {
         showsHorizontalScrollIndicator={false}
         data={props.item.data}
         keyExtractor={(d) => d.id}
-        renderItem={(d) => <BookItemComponent item={d} />}
+        renderItem={(d) => <BookItemComponent item={d} thisStyle = {styles.styleItem} />}
       />
     </View>
   );
@@ -39,6 +38,9 @@ const styles = StyleSheet.create({
 readMore: {
   fontSize: 12,
   color: colors.primary,
+},
+styleItem:{
+  marginLeft: 15,
 },
 });
 export default ChildFlatList;

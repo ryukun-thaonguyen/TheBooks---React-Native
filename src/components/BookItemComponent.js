@@ -3,14 +3,15 @@ import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/thebook-appicon';
 import colors from '../themes/Colors';
+import { NavigationUtils } from '../navigation';
 const BookItemComponent = (props) =>{
     var data = props.item.item;
     if (!data){
         data = props.item;
     }
     return (
-         <View style={styles.viewBookContent}>
-            <TouchableOpacity>
+         <View style={[styles.viewBookContent, props.thisStyle && props.thisStyle]}>
+            <TouchableOpacity onPress = {()=>NavigationUtils.pushScreen("HomeTab","BookDetail","xZcgfkta")}>
                 <Image source={{uri: data.image}} style={styles.image} />
                 <Text style={styles.txtName}>{data.name}</Text>
             </TouchableOpacity>
@@ -32,15 +33,25 @@ const BookItemComponent = (props) =>{
 };
 const styles = StyleSheet.create({
     viewBookContent: {
-        paddingLeft: 10,
         marginTop: 7.5,
         width: Dimensions.get('screen').width / 2 - 30,
+    },
+    borderImage: {
+        borderRadius: 1,
+        shadowColor: 'black',
+        shadowOffset: {
+            width: 10,
+            height: 10,
+        },
+        shadowRadius: 5,
+        shadowOpacity: 0.5,
     },
     image: {
         height: 170,
         width: 155,
     },
     txtName: {
+        marginTop: 7.5,
         fontSize: 13,
         fontFamily: 'Cabin-Regular',
     },

@@ -4,10 +4,8 @@ import {View, StyleSheet, Text, FlatList, SectionList} from 'react-native';
 import colors from '../themes/Colors';
 import bookItem from './data/bookItem';
 import ChildFlatList from './ChildFlatList';
-
 const ListBookComponent = () => {
     const [bookData, setbookData] = useState(bookItem);
-    // console.log(bookData);
     return (
         <View style={styles.container}>
             <FlatList
@@ -19,6 +17,7 @@ const ListBookComponent = () => {
         </View>
     );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

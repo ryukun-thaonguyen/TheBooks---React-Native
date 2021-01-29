@@ -8,8 +8,26 @@ import InfoTab from './Tabs/InfoTab';
 import NotificationTab from './Tabs/NotificationTab';
 import OrderTab from './Tabs/OrderTab';
 import UserTab from './Tabs/UserTab';
-const pushScreen=(stackId, componentName)=>{
-  Navigation.push(stackId,{component:{name:componentName}})
+const pushScreen=(stackId, componentName,passProps,title)=>{
+  Navigation.push(stackId,{
+    component:{
+      name:componentName,
+      passProps: {
+        data: passProps,
+        title: title,
+      },
+      options: {
+        topBar: {
+          title: {
+            text: title,
+          },
+          backButton:{
+            icon:require('../assets/Images/arrowBack.png'),
+          }
+        },
+      },
+    }
+  })
 }
 const popScreen=(stackId)=>{
   Navigation.pop(stackId)

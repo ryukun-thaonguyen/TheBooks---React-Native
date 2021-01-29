@@ -9,9 +9,6 @@ import { Navigation } from 'react-native-navigation';
 
 export default function SeeAllBook(props) {
   const [bookDataType, setbookData] = useState(props.data);
-  const undo = () =>{
-    Navigation.pop("root");
-  };
   return (
     <ScrollView>
       <View style={styles.containViewAll}>

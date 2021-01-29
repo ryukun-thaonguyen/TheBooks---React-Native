@@ -14,7 +14,8 @@ import Notification from '../screens/Notification';
 import Order from '../screens/Order';
 import User from '../screens/User';
 import Info from '../screens/Info';
-import SideBar from './SideBar/SideBar'
+import SideBar from './SideBar/SideBar';
+import BookDetail from '../screens/BookDetail';
 
 const SCREENS_WITH_REDUX = {
   Home,
@@ -27,6 +28,7 @@ const SCREENS_WITH_REDUX = {
   SideBar,
   Register,
   SeeAllBook,
+  BookDetail
 };
 const SCREENS = {};
 
