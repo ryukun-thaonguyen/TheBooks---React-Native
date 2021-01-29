@@ -4,13 +4,28 @@ import {View, ScrollView, Text, StyleSheet, Dimensions, TouchableOpacity} from '
 import Icon from 'react-native-vector-icons/thebook-appicon';
 import CInput from '../../components/CInput';
 import {Colors} from '../../themes/index';
+import { useSelector, useDispatch } from 'react-redux';
+import loginType from '../../redux/LoginRedux/actions';
+import NavigationUtils from '../../navigation/Utils';
 
 export default function Login() {
+  const load = useSelector((state) => state.loading);
   const [userName, setUsername] = useState('');
-  const [passWord, storePassword] = useState('');
-  const clickTest = () =>{
-    alert('username: ' + userName + ' || password: ' + passWord);
+  const [password, storePassword] = useState('');
+  const dispatch = useDispatch();
+  const loginUser = () =>{
+    let data = {
+    grant_type: 'password',
+    username: userName,
+    password: password,
+    };
+    dispatch(loginType.userLogin(data));
   };
+
+  const onSignUp = () =>{
+    NavigationUtils.startRegister();
+  };
+
   return (
     <ScrollView>
       <View style={styles.formLogin}>
@@ -21,14 +36,14 @@ export default function Login() {
           <Text style={styles.headerTitle}>Đăng Nhập </Text>
         </View>
         <View style={styles.formInputLogin}>
-          <CInput title={'Tài Khoản'} pass={false} onChangeText={setUsername}/>
-          <CInput title={'Mật Khẩu'} pass={true} onChangeText={storePassword}/>
+          <CInput title={'Tài Khoản'}  subTitle = {'Nhập tài khoản'} pass={false} onChangeText={setUsername}/>
+          <CInput title={'Mật Khẩu'}  subTitle = {'Nhập tài khoản'} pass={true} onChangeText={storePassword}/>
         </View>
         <View style={styles.functionFormLogin}>
-          <TouchableOpacity style={[styles.buttonFormLogin,{backgroundColor: Colors.lightBlue}]} onPress={() => clickTest()}>
+          <TouchableOpacity style={[styles.buttonFormLogin,{backgroundColor: Colors.lightBlue}]} onPress={() => loginUser()}>
             <Text style={[styles.textButtonFormLogin, {color: Colors.white}]}> Đăng Nhập </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonFormLogin}>
+          <TouchableOpacity style={styles.buttonFormLogin} onPress={() => onSignUp()}>
             <Text style={[styles.textButtonFormLogin, {color: Colors.darkGray}]}> Đăng Ký </Text>
           </TouchableOpacity>
         </View>

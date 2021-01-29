@@ -3,6 +3,7 @@ import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {ImagesIntro} from '../../themes/index';
 import Swiper from 'react-native-swiper';
+import NavigationUtils from '../../navigation/Utils';
 
 export default function IntroView() {
     const DATAINTROS = [
@@ -31,6 +32,9 @@ export default function IntroView() {
           startButton: true,
         },
       ];
+    const loginForm = () =>{
+        NavigationUtils.startLogin();
+    }
   return (
     <View style={styles.homeIntro}>
         <Swiper loop = {false} dotStyle = {styles.styleDots} activeDotStyle = {styles.styleDots} style={styles.slideIntro}>
@@ -41,7 +45,7 @@ export default function IntroView() {
                         <Text style={styles.titleIntro}>{item.title}</Text>
                         <Text style={styles.subTitleIntro}>{item.subTitle}</Text>
                         {item.startButton === true ? (
-                            <TouchableOpacity style={styles.buttonStart}>
+                            <TouchableOpacity style={styles.buttonStart} onPress={() => loginForm()}>
                                 <Text style={styles.textButton}> Bắc Đầu </Text>
                             </TouchableOpacity>
                         ) : null }

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // import { call, put } from 'redux-saga/effects';
 import _ from 'lodash';
 // import { loading, clearLoading } from '../redux/AppRedux/actions';
@@ -10,7 +11,7 @@ export function makeConstantCreator(...params) {
   return constant;
 }
 
-export const makeActionCreator = (type, params = null) => ({ type, ...params });
+export const makeActionCreator = (type, params = null) => ({type, ...params});
 
 export const makeReducerCreator = (initialState = null, handlers = {}) => (
   state = initialState,

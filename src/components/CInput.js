@@ -13,14 +13,14 @@ export default function CInput(props) {
         <Text style={styles.titleInput}>{props.title}</Text>
             {props.pass === true ? (
                 <View style={styles.inputPassword}>
-                    <TextInput style={styles.tabInputPass} placeholder = {'Nhập ' + props.title} secureTextEntry={eyes} onChangeText={(text) => props.onChangeText(text)}/>
+                    <TextInput style={styles.tabInputPass} placeholder = {props.subTitle} secureTextEntry={eyes} onChangeText={(text) => props.onChangeText(text)}/>
                     <TouchableOpacity onPress={() => setEyes(!eyes)}>
                     {
                         eyes ? <Icon name="ic-hide-password" size = {25} style={{marginTop: 8}}/> : <Icon name = "ic-show-password" size = {25} style={{marginTop: 8}}/>
                     }
                     </TouchableOpacity>
                 </View>
-            ) :  <TextInput style={styles.tabInput} placeholder = {'Nhập ' + props.title} onChangeText={(text) => props.onChangeText(text)}/>}
+            ) :  <TextInput style={styles.tabInput} placeholder = {props.subTitle} onChangeText={(text) => props.onChangeText(text)}/>}
     </View>
   );
 }
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     titleInput: {
         fontSize: 14,
         fontFamily: 'SVN-ProximaNova',
-        color: Colors.greyishBrown,
+        color: Colors.darkGray,
     },
     tabInput: {
         marginTop: 7,

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Immutable from 'seamless-immutable';
 import { AppTypes } from './actions';
 import { makeReducerCreator } from '../../utils/ReduxUtils';
