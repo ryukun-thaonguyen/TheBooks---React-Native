@@ -14,7 +14,7 @@ import Notification from '../screens/Notification';
 import Order from '../screens/Order';
 import User from '../screens/User';
 import Info from '../screens/Info';
-import SideBar from './SideBar/SideBar'
+import SideBar from './SideBar';
 
 const SCREENS_WITH_REDUX = {
   Home,

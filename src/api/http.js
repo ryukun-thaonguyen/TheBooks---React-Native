@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import axios from 'axios';
 
 const API_ROOT = 'https://the-books-api-dev.enouvo.com/api';

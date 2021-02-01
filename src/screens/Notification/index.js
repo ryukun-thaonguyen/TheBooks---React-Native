@@ -1,12 +1,19 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import { ScrollView } from 'react-native';
-import ListBookComponent from '../../components/ListBookComponent';
-const Notification = ()=> {
+import React, {useState} from 'react';
+import { ScrollView, FlatList } from 'react-native';
+import notification from '../../components/data/notification';
+import Notification from '../../components/notification';
+const Notifications = ()=> {
+    const [notifications, setbookCategory] = useState(notification);
+    console.log('Thông báo: ' + JSON.stringify(notifications));
     return (
         <ScrollView>
-        <ListBookComponent />
+            <FlatList
+            data={notifications}
+            keyExtractor={(item) => item.id}
+            renderItem={(item) => <Notification item={item} />}
+        />
        </ScrollView>
     );
 };
-export default Notification;
+export default Notifications;

@@ -32,7 +32,8 @@ const BookItemComponent = (props) =>{
 };
 const styles = StyleSheet.create({
     viewBookContent: {
-        paddingLeft: 10,
+        paddingHorizontal: 10,
+        marginRight: 15,
         marginTop: 7.5,
         width: Dimensions.get('screen').width / 2 - 30,
     },

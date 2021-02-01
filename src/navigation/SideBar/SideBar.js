@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import {
   Text,
@@ -32,31 +33,33 @@ class SideBar extends Component {
         },
       },
     });
-    console.log("close");
+    console.log('close');
   };
-  
+
   render() {
     return (
       <View style={[styles.container]}>
         <ScrollView>
-        <View style={styles.titleContainer}>
-          <TouchableOpacity onPress={this.closeMenu} style={styles.closeButton}>
-            <Icon name="ios-close" solid size={35} />
-          </TouchableOpacity>
-          <Text style={styles.textTitle}>Thể loại</Text>
-          <TouchableOpacity style={styles.reloadButton}>
-            <Icon name="ios-refresh" size={30} solid />
-          </TouchableOpacity>
-        </View>
+          <View style={styles.titleContainer}>
             <TouchableOpacity
-              style={styles.searchButton}
-              onPress={() => this.onSearchBookWithCategory()}>
-              <Text style={styles.textSearch}>Tìm kết quả</Text>
+              onPress={this.closeMenu}
+              style={styles.closeButton}>
+              <Icon name="ios-close" solid size={35} />
             </TouchableOpacity>
-            <View style={styles.space}></View>
-          </ScrollView>
-        </View>
-    )
+            <Text style={styles.textTitle}>Thể loại</Text>
+            <TouchableOpacity style={styles.reloadButton}>
+              <Icon name="ios-refresh" size={30} solid />
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity
+            style={styles.searchButton}
+            onPress={() => this.onSearchBookWithCategory()}>
+            <Text style={styles.textSearch}>Tìm kết quả</Text>
+          </TouchableOpacity>
+          <View style={styles.space}></View>
+        </ScrollView>
+      </View>
+    );
   }
 }
 export default SideBar;
