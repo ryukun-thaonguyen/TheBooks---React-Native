@@ -9,9 +9,10 @@ import bookCategory from '../../components/data/bookCategory';
 const IC_DOWN = require('../../assets/Images/down.png');
 const IC_UP = require('../../assets/Images/up.png');
 const SideBar = () => {
+  const [categoryBook, setbookCategory] = useState(bookCategory);
 
-  const categoryBook = useSelector((state) => state.category);
-  console.log('Category: ' + JSON.stringify(categoryBook));
+  // const categoryBook = useSelector((state) => state.category);
+  // console.log('Category: ' + JSON.stringify(categoryBook));
   return (
     <View style={styles.container}>
       <View style={styles.viewRow}>
